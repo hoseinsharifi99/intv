@@ -25,6 +25,7 @@ func GetResponses(urls []string, timeout time.Duration) ([]string, error) {
 
 	responses := make([]string, 0, len(urls))
 	errChan := make(chan error, len(urls))
+
 	ctx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
 

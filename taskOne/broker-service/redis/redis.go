@@ -21,7 +21,7 @@ func NewConnetion() *Redis {
 
 func (r *Redis) PublishOrder(order []byte, queueName string) error {
 
-	if err := r.redis.Publish(ctx, "send-order-data", order).Err(); err != nil {
+	if err := r.redis.LPush(ctx, "orders", order).Err(); err != nil {
 		panic(err)
 	}
 	return nil

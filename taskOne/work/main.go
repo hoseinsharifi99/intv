@@ -30,5 +30,5 @@ func main() {
 
 	fmt.Println("=====SERVICE STARTED=====")
 
-	h.SubOrder(ctx, "send-order-data")
+	h.SubOrder(ctx, "orders")
 }
